@@ -13,7 +13,7 @@ class ReportStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return True;
     }
 
     /**
@@ -27,9 +27,10 @@ class ReportStoreRequest extends FormRequest
            'name'=> ['required'],
            'email'=> ['required','email'],
            'report'=> ['required'],
-           'possible_evidence'=> ['required'],
+        //    'possible_evidence'=> ['required'],
            'location'=> ['required'],
-           'phone_no' =>['required']
+           'phone_no' =>['required'],
+           'subject'=>['required']
         ];
     }
 }

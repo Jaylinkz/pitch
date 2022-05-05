@@ -20,6 +20,7 @@ class EventServiceProvider extends ServiceProvider
         ],
         NewReport::class => [
             SendReportNotification::class,
+            SendMailFired::class,
         ],
     ];
 

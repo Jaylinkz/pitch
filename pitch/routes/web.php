@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Mail\ReportMail;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\createUserController;
+use App\Http\Controllers\ReportsController;
 
 
 /*
@@ -16,9 +18,9 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::middleware([
     'auth:sanctum',
@@ -40,3 +42,20 @@ route::get('emailsend', function(){
     Mail::to("jay@example.com")->send(new ReportMail($mailData));
     dd('mail sent successfully');
 });
+
+Route::get('/nav', function () {
+    return view('layouts.blog');
+});
+Route::resource('superadmin',createUserController::class);
+Route::post('reports',[ReportsController::class,'report'])->name('report');
+
+// ------------------------- test ----------------------
+Route::get('/', 'PagesController@home');
+
+// ------------------ cases(blog) route --------------------
+Route::get('/cases', 'PagesController@cases')->name('cases');
+
+// ----------------- show single case/post route -------------
+Route::get('/show','PagesController@show')->name('show');
+
+Route::get('/subadmin', 'PagesController@subadmin')->name('subadmin');

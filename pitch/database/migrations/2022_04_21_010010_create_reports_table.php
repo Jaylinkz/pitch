@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->text('email');
             $table->text('report');
-            $table->string('possible_evidence');
+            $table->string('possible_evidence')->nullable();
             $table->string('location');
+            $table->string('subject');
             $table->string('phone_no');
             $table->timestamps();
         });

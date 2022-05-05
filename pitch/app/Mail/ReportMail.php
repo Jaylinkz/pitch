@@ -6,20 +6,21 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Report;
 
 class ReportMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $mailData;
+    public $report;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($mailData)
+    public function __construct(Report $report)
     {
-      $this->mailaData = $mailData;  //
+      $this->report = $report;  //
     }
 
     /**
@@ -29,6 +30,7 @@ class ReportMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('test email')->view('email.report');
+        return $this->subject('test email')->view('email.report')->attachFromStorage('path','report.pdf',[
+        ]);
     }
 }

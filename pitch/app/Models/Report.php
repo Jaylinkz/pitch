@@ -15,5 +15,6 @@ class Report extends Model
            'possible_evidence',
            'location',
            'phone_no',
+           'subject'
     ];
 }
