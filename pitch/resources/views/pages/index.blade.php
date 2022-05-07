@@ -5,6 +5,16 @@
     <section class="home-section home-parallax home-fade home-full-height bg-dark-30" id="home" data-background="{{asset('images/peace.png')}}">
         <div class="titan-caption">
           <div class="caption-content">
+            @if(session()->has('success'))
+            <div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-green-500 .">
+                <span class="text-xl inline-block mr-5 align-middle">
+                  <i class="fas fa-bell" />
+                 </span>
+                    <span class="inline-block align-middle mr-8">
+                      <b class="capitalize">{{session()->get('success')}}</b> 
+                    </span>
+            </div>
+        @endif
             <div class="font-alt mb-30 titan-title-size-1">Hello &amp; welcome</div>
             <div class="font-alt mb-40 titan-title-size-4">We are <span class="rotate">Peace | Justice| Strong Institution</span>
             </div><a class="section-scroll btn btn-border-w btn-circle" href="#about">Learn More</a>
@@ -222,9 +232,16 @@
                         <input class="form-control input-lg" type="email" name="email" placeholder="Email"/>
                       </div>
                       <div class="form-group col-sm-6 col-xs-12">
-                        <input class="form-control input-lg" type="file" name="possible_evidence" placeholder="Name"/>
+                        <label>upload any evidence that you thing would be useful to this case</label> 
+                        <input class="form-control input-lg" type="file" name="possible_evidence" />
+                      </div>
+               
+                      <div class="form-group col-sm-6 col-xs-12">
+                        <label>upload any photo evidence that you thing would be useful to this case</label> 
+                        <input class="form-control input-lg" type="file" name="image" />
                       </div>
                       <div class="form-group col-sm-6 col-xs-12">
+                        
                         <input class="form-control input-lg" type="text" name="location" placeholder="Location"/>
                       </div>
                     </div>
@@ -236,12 +253,11 @@
                       <div class="form-group col-sm-6 col-xs-12">
                         <select class="form-control input-lg" name="subject">
                           <option value="subject1" disabled="" selected="">Subject</option>
-                          <option value="BusinessConsulting">Humman Rights</option>
-                          <option value="MarketingStrategy">Sexual Abuse</option>
-                          <option value="TaxesAdvisory">Bribery</option>
-                          <option value="InvestmentPlanning">Detention</option>
-                          <option value="ITManagement">Work abuse</option>
-                          <option value="DataAnalytics">Data Analytics</option>
+                          
+                          <option value="Sexual Abuse">Sexual Abuse</option>
+                          <option value="Bribery">Bribery</option>
+                          <option value="Detention">illegal Detention</option>
+                          <option value="Work abuset">Work abuse</option>
                         </select>
                       </div>
                     </div>

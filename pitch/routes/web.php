@@ -33,15 +33,16 @@ Route::middleware([
 });
 
 route::get('/redirects',[HomeController::class,'index']);
+route::get('/details',[ReportsController::class,'show'])->name('details')->middleware('Ngo');
 
-route::get('emailsend', function(){
-    $mailData = [
-        "Name" => "Musa Abdulahi",
-        "contact" => "08079769699",
-    ];
-    Mail::to("jay@example.com")->send(new ReportMail($mailData));
-    dd('mail sent successfully');
-});
+// route::get('emailsend', function(){
+//     $mailData = [
+//         "Name" => "Musa Abdulahi",
+//         "contact" => "08079769699",
+//     ];
+//     Mail::to("jay@example.com")->send(new ReportMail($mailData));
+//     dd('mail sent successfully');
+// });
 
 Route::get('/nav', function () {
     return view('layouts.blog');
@@ -59,3 +60,7 @@ Route::get('/cases', 'PagesController@cases')->name('cases');
 Route::get('/show','PagesController@show')->name('show');
 
 Route::get('/subadmin', 'PagesController@subadmin')->name('subadmin');
+
+route::get('home',[ReportsController::class,'xyz']);
+route::get('email',[ReportsController::class,'mail']);
+Route::resource('users',createUserController::class)->middleware('superAdmin');

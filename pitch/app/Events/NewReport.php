@@ -13,7 +13,7 @@ use Illuminate\Queue\SerializesModels;
 class NewReport
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-public $report;
+
     /**
      * Create a new event instance.
      *

@@ -27,7 +27,8 @@ class ReportStoreRequest extends FormRequest
            'name'=> ['required'],
            'email'=> ['required','email'],
            'report'=> ['required'],
-        //    'possible_evidence'=> ['required'],
+          'image'=>['image'],
+          'possible_evidence'=>[],
            'location'=> ['required'],
            'phone_no' =>['required'],
            'subject'=>['required']

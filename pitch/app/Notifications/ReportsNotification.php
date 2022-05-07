@@ -10,15 +10,19 @@ use Illuminate\Notifications\Notification;
 class ReportsNotification extends Notification
 {
     use Queueable;
-    public $report;
+  
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($report)
-    {$this->report = $report;
+    public function __construct($report,$email,$name,$image,$possible_evidence)
+    {   $this->report = $report;
+        $this->email = $email;
+        $this->name = $name;
+        $this->image  = $image;
+        $this->possible_evidence = $possible_evidence;
         //
     }
 
@@ -56,8 +60,12 @@ class ReportsNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'name'=>$this->report->name,
-            'email'=>$this->report->email
+            'name'=>$this->name,
+            'email'=>$this->email,
+            'report'=>$this->report,
+            'image'=>$this->image,
+            'possible_evindece'=>$this->possible_evidence
+            
         ];
     }
 }

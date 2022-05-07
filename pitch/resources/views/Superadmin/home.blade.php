@@ -44,7 +44,7 @@
         <!-- Brand Logo -->
         <a href="#" class="brand-link">
           <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-          <span class="brand-text font-weight-light">UNIJOS</span>
+          <span class="brand-text font-weight-light">Justice</span>
         </a>
     
         <!-- Sidebar -->
@@ -84,15 +84,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
-              <li class="nav-item menu-open">
-                <a href="{{route('superadmin.index')}}" class="nav-link active">
-                  <i class="nav-icon fas fa-tachometer-alt"></i>
-                  <p>
-                    Manage Students
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-              </li>
+          
               <li class="nav-item">
                
             </ul>
@@ -135,7 +127,6 @@
                   
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Employee_id</th>
                   <th>Action</th>
               </tr>
           </thead>

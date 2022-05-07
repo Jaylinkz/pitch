@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1>NEW CASE!!!!</h1>
-    <p>a new report just been submitted, kindly check your dashboard to see if you can take it up</p>
+<p>check your dashboard to view case details</p>
 </body>
 </html>

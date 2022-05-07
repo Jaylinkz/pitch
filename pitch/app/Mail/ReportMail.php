@@ -12,15 +12,15 @@ class ReportMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $report;
+    
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Report $report)
+    public function __construct()
     {
-      $this->report = $report;  //
+     //
     }
 
     /**
@@ -30,7 +30,7 @@ class ReportMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('test email')->view('email.report')->attachFromStorage('path','report.pdf',[
-        ]);
+        return $this->subject(' New report!!')->view('email.report');
+        
     }
 }
